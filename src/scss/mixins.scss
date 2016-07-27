@@ -1,0 +1,40 @@
+@mixin breakpoint($class) {
+    @if $class == xxxs {
+        @media (max-width: 371px) { @content; }
+    }
+
+    @if $class == xxs {
+        @media (max-width: 480px) { @content; }
+    }
+
+    @if $class == xs {
+        @media (max-width: 767px) { @content; }
+    }
+
+    @else if $class == sm {
+        @media (min-width: 768px) { @content; }
+    }
+
+    @else if $class == md {
+        @media (min-width: 992px) { @content; }
+    }
+
+    @else if $class == lg {
+        @media (min-width: 1200px) { @content; }
+    }
+}
+
+@mixin overflowText() {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin flexVertical() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    resize: vertical;
+    text-align: center;
+}

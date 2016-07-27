@@ -1,0 +1,386 @@
+@import "settings";
+@import "mixins";
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    font: normal 16/1.45 "Source Sans Pro Light","Helvetica Neue",Arial,sans-serif;
+    background-color: #fff;
+    position: relative;
+    padding-bottom: 132px;
+    @include breakpoint("md"){
+        padding-bottom: 117px;
+    }
+}
+
+#appFooter {
+    display: block;
+    padding: 20px;
+    margin: 0;
+
+    ul {
+        text-align: center;
+        li:first-child {
+            border-left:0;
+        }
+        li {
+            border-left: 1px solid rgba(125,125,125,.4);
+            list-style: none;
+            text-indent: 0;
+            display:inline-block;
+            padding: 0 10px;
+            font-size: 14px;
+
+            span.hidexxs {
+                @include breakpoint('xxs') {
+                    display: none;
+                }
+            }
+
+            span.showxxs {
+                display: none;
+                @include breakpoint('xxs') {
+                    display:inline-block;
+                }
+            }
+        }
+    }
+}
+
+#FooterRegion {
+    margin-top:0px !important;
+    background-color: #FFFFFF;
+}
+
+.error {
+    padding: 55px;
+    width: 80%;
+    margin: 0 auto;
+    .message {
+        border-radius: 6px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        padding: 90px;
+        text-align: center;
+        background-color: #fff;
+    }
+    h1 {
+        font-size: 29px;
+    }
+    h2 {
+        font-size: 16px;
+    }
+}
+
+.intro {
+    width: 98%;
+    max-width: 930px;
+    padding: 20px;
+    margin: 64px auto 10px;
+    text-align: center;
+    color: #534d45;
+    @include breakpoint('xs') {
+        margin-top: 0;
+        padding-top: 16px;
+    }
+    h1 {
+        font-size: 24px;
+        font-weight: 300;
+        margin: 0 0 27px;
+        padding: 80px 0 0;
+        text-align: center;
+        position: relative;
+        @include breakpoint('md') {
+            font-size: 36px;
+        }
+        @include breakpoint('xs') {
+            width: 225px;
+            margin: 0 auto 25px;
+            padding-left: 60px;
+            padding-top: 0;
+        }
+        img{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 64px;
+            width: 64px;
+            padding: 0;
+            margin: 0 0 25px -24px;
+            @include breakpoint('xs') {
+                top: 50%;
+                margin-top: -24px;
+                left: 24px;
+                height: 48px;
+                width: 48px;
+            }
+        }
+    }
+    p {
+        display: inline-block;
+        text-align: center;
+        font-size: 15px;
+        margin: 0 0 45px;
+        padding: 0;
+        @include breakpoint('xs'){
+            margin-bottom: 17px;
+        }
+    }
+
+    .bodyText {
+        max-width: 800px;
+    }
+
+    .legalNotice {
+        background-color: #F8F7F3;
+        font-size: 15px;
+        padding: 16px 20px;
+        border-radius: 6px;
+        margin-bottom: 100px;
+        @include breakpoint('xs') {
+            padding: 16px 20px;
+            margin-bottom: 36px;
+        }
+    }
+    .legalLink {
+        text-align: center;
+        width: 100%;
+        position: fixed;
+        bottom: 128px;
+        left: 0;
+        @include breakpoint("md") {
+            bottom: 90px;
+        }
+        a, a:visited, a:hover, a:focus {
+            display: block;
+            float: left;
+            clear: left;
+            width: 100%;
+            text-align: center;
+            color: #237b9d;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 0;
+            position: relative;
+            @include breakpoint("md") {
+                display: inline-block;
+                float: none;
+                clear: none;
+                width: auto;
+                padding: 5px 20px;
+                &:after {
+                    content: "|";
+                    position: absolute;
+                    left: 0;
+                }
+                &:first-child:after {
+                    content: "";
+                }
+            }
+        }
+    }
+}
+
+.ancGrid {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#questionBody {
+    padding-top: 36px;
+    border-top: 1px solid #DEDCD6;
+    @include breakpoint('xs') {
+        padding-top: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 30px;
+        color: #534D45;
+        @include breakpoint('xs') {
+            font-size: 20px;
+        }
+    }
+
+    h3 {
+        text-align: center;
+        font-size: 16px;
+        margin-top: 0px;
+    }
+
+    #acisQuestionHeader {
+        padding-bottom: 38px;
+        @include breakpoint('xs') {
+            padding-bottom: 10px;
+        }
+    }
+}
+
+#acisQuestionForm {
+    .formFooter {
+        margin-bottom: 25px;
+    }
+
+    .ancCol {
+        margin-bottom: 24px;
+    }
+
+    #submitQuestion {
+        margin-right: 30px;
+    }
+
+    .questionAnswer {
+        position: relative;
+        cursor: pointer;
+        &.circleDesignImg {
+            min-height: 164px;
+        }
+        &.circleDesignTxt {
+            @include flexVertical();
+        }
+    }
+
+    .roundButton {
+        border: 4px solid #DEDCD6;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-right: 16px;
+        margin-bottom: 4px;
+        font-size: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #36322D;
+        background-color: #FFF;
+        @include breakpoint('xs') {
+            width: 106px;
+            height: 106px;
+        }
+    }
+
+    .circleDesignImg {
+        .imgLabel {
+            margin-bottom: 0px;
+        }
+    }
+
+    .cardDesign {
+        border: 4px solid #DEDCD6;
+        border-radius: 6px;
+        padding: 20px;
+        @include flexVertical();
+        height: 100px;
+        &.cardDesignImg {
+            height: 134px;
+            background-size: 96px 96px;
+            background-position: 15px center;
+            background-repeat: no-repeat;
+        }
+        .questionLabel {
+            font-size: 20px;
+        }
+        .questionInstruction {
+            font-size: 16px;
+            font-weight: normal;
+        }
+        .imgMask {
+            position: absolute;
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+        }
+        .questionContent {
+            position: relative;
+            padding-left:100px;
+        }
+    }
+
+    label > input:checked + .roundButton, label > input:checked + .questionAnswer .roundButton, label > input:checked + .cardDesign, label > input:checked + .questionAnswer .cardDesign {
+        border: 4px solid #9BC01C;
+        color: #799D00;
+    }
+
+    label > input:checked + .questionAnswer .imgLabel {
+        font-weight: bold;
+        color: #799D00;
+    }
+
+    .questionLabel {
+        font-weight: normal;
+    }
+
+    .imgLabel {
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+
+    .imgMask {
+        background-position: center center;
+        background-size: cover;
+    }
+
+}
+
+.questionHeader {
+    .categoryTitle {
+        font-family: "Source Sans Pro","Helvetica Neue",Arial,sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+        color: #989A90;
+        @include breakpoint('xs') {
+            font-size: 16px;
+        }
+    }
+    .subCategoryTitle {
+       font-size: 30px;
+        font-family: "Source Sans Pro","Helvetica Neue",Arial,sans-serif;
+        color: #60517F;
+        font-weight: 400;
+        margin-bottom: 18px;
+        @include breakpoint('xs') {
+            font-size: 20px;
+            margin-bottom: 12px;
+            padding-bottom: 0px;
+        }
+    }
+}
+
+.centered {
+    text-align: center;
+}
+
+#thankYou {
+    text-align: center;
+    margin-top: 136px;
+    @include breakpoint('xs') {
+        margin-top: 70px;
+    }
+    h1 {
+        margin-top: 40px;
+        font-family: "Source Sans Pro","Helvetica Neue",Arial,sans-serif;
+        font-weight: 300;
+        font-size: 36px;
+        color: #534D45;
+    }
+    h2 {
+        margin-top: 34px;
+        font-family: "Source Sans Pro","Helvetica Neue",Arial,sans-serif;
+        font-weight: 300;
+        font-size: 24px;
+        color: #534D45;
+        margin-bottom: 100px;
+        @include breakpoint('xs') {
+            margin-top: 20px;
+        }
+    }
+    #thankYouFooter {
+        margin-bottom: 54px;
+        @include breakpoint('xs') {
+            margin-bottom: 34px;
+        }
+    }
+}

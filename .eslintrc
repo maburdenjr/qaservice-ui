@@ -1,0 +1,43 @@
+{
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-unused-vars": 2, //disallow declaration of variables that are not used in the code
+    "no-multiple-empty-lines": [2, {"max": 2, "maxEOF": 2}], //disallow multiple empty lines
+    "no-use-before-define": 2, //disallow use of variables before they are defined
+    "no-console": [2, { "allow": ["warn", "error"] }],
+    "new-cap": 1,
+    "semi": 1,
+    "strict": 1,
+    "no-underscore-dangle": 1,
+    "eol-last": 1,
+    "quotes": [1, "single"],
+    "jsx-quotes": [1, "prefer-double"],
+    "react/jsx-no-undef": 1,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1
+  }
+}
+
+/* Rules priority
+  List of rules: http://eslint.org/docs/rules/
+  List of recomended rules: http://eslint.org/docs/user-guide/migrating-to-1.0.0
+  List of react rules: https://github.com/yannickcr/eslint-plugin-react
+  0 - turn the rule off
+  1 - turn the rule on as a warning (doesn't affect exit code)
+  2 - turn the rule on as an error (exit code is 1 when triggered)
+*/
